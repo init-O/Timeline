@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <link rel="stylesheet" href="about.css">
+   <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <title>Our Journey</title>
+    <script>
+        var data = JSON.stringify(data) 
+        console.log(data)
+    </script>
+</head>
+<body class="about-us">
+
+    <div class="container">
+        <h1 class="title display-4 text-info text-center">Our Journey</h1>
+        <div class="mt-3 row">
+            <div class="col-md-12">
+                <div class="main-timeline">
+                    <% data.map(checkPoint => { %>
+                        <div class="timeline">
+                            <div class="timeline-icon d-flex align-items-center justify-content-center"><div class="spinner-grow w-50 h-50 " role="status"></div></div>
+                            <div class="timeline-content">
+                                <h2 class="timeline-content-title m-2"><%- checkPoint.title %></h2>
+                                <img class="rounded-circle icon-image" src=<%- checkPoint.image %> alt="">
+                                <p class="description">
+                                    <%- checkPoint.content %>
+                                </p>
+                            </div>
+                            <div class="year"><span><%- checkPoint.time %></span></div>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer m-3">
+        <div class="d-flex justify-content-center align-items-center">
+            <h3 class="text-center  text-danger">And much more to come</h3>
+            <div class="spinner-grow ml-3 spinner-grow-sm text-info" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow ml-3 spinner-grow-sm text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="spinner-grow ml-3 spinner-grow-sm text-scuccess" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
